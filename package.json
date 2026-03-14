@@ -1,7 +1,8 @@
 {
   "name": "bs-tech",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "author": "UnTamed-Fury <untamedfury666@gmail.com> (https://github.com/UnTamed-Fury)",
   "type": "module",
   "scripts": {
     "dev": "vite",

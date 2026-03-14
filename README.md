@@ -71,7 +71,8 @@ Ensure you have [Yarn](https://yarnpkg.com/) installed.
 
 The interpretations provided in this application are derived from the seminal translation by **Richard Wilhelm**, which serves as the standard for scholarly study of the I Ching in the West.
 
-This project was crafted with intent by **[Untamed Fury](https://www.untamedfury.space)**.
+### **Author & Lead Contributor**
+This project was conceived, designed, and built entirely by **[UnTamed-Fury](https://github.com/UnTamed-Fury)**.
 
 > *"The superior man sets his life in order by examining the nature of virtue."*
 
