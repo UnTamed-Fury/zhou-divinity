@@ -1,0 +1,26 @@
+{
+  "name": "bs-tech",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "test": "vitest run",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.5.30"
+  },
+  "devDependencies": {
+    "@types/node": "^24.12.0",
+    "@vitejs/plugin-vue": "^6.0.5",
+    "@vitest/ui": "^4.1.0",
+    "@vue/tsconfig": "^0.9.0",
+    "sass": "^1.98.0",
+    "typescript": "~5.9.3",
+    "vite": "^8.0.0",
+    "vitest": "^4.1.0",
+    "vue-tsc": "^3.2.5"
+  }
+}

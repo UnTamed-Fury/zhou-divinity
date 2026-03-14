@@ -1,0 +1,154 @@
+:root {
+  /* Colors */
+  --ink: #1a1a1b;
+  --silk: #f4f1ea;
+  --cinnabar: #962d2d;
+  --gold: #b8860b;
+  --slate: #4a4a4a;
+  --border: rgba(26, 26, 27, 0.1);
+  --white: #ffffff;
+  
+  /* Fluid Spacing Scale */
+  --space-unit: 1rem;
+  --space-xs: calc(0.5 * var(--space-unit));
+  --space-sm: calc(0.75 * var(--space-unit));
+  --space-md: calc(1.5 * var(--space-unit));
+  --space-lg: calc(3 * var(--space-unit));
+  --space-xl: calc(6 * var(--space-unit));
+  
+  /* Typography Scale */
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Noto Serif SC', serif;
+  
+  /* Fluid Font Sizes */
+  --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+  --text-h1: clamp(2.5rem, 2rem + 2.5vw, 5rem);
+  --text-h2: clamp(1.8rem, 1.5rem + 1.5vw, 3rem);
+  --text-h3: clamp(1.4rem, 1.2rem + 1vw, 2.2rem);
+  
+  /* Layout */
+  --max-width: 1200px;
+  --content-width: 70ch;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: var(--silk);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.7;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Sublte Grain Overlay */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+  opacity: 0.05;
+}
+
+#app {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  line-height: 1.1;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+h1 { font-size: var(--text-h1); }
+h2 { font-size: var(--text-h2); }
+h3 { font-size: var(--text-h3); }
+
+p {
+  max-width: var(--content-width);
+  margin-bottom: var(--space-md);
+}
+
+.card {
+  background: var(--white);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-lg);
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 80px rgba(0,0,0,0.02);
+  transition: transform 0.4s cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: var(--space-sm) var(--space-lg);
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  background: var(--ink);
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+button:hover {
+  background: var(--cinnabar);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(150, 45, 45, 0.15);
+}
+
+button.outline {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--ink);
+}
+
+button.outline:hover {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.ink-wash {
+  position: fixed;
+  inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?auto=format&fit=crop&q=80&w=2000');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.06;
+  z-index: -1;
+  pointer-events: none;
+  filter: sepia(0.2);
+}
+
+/* Transition Animations */
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
+  transform: translateY(20px) scale(0.99);
+}
+
+@media (max-width: 768px) {
+  #app { padding: 0 var(--space-sm); }
+  .card { padding: var(--space-md); }
+}

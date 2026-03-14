@@ -1,0 +1,8 @@
+node_modules
+dist
+.cloudflared
+*.log
+.vscode
+.env
+yarn-error.log
+package-lock.json
